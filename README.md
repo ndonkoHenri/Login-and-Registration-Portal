@@ -1,16 +1,18 @@
 # Login and Registration Portal
 
 ## Table of Contents
-* [Introduction](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#introduction) 
-* [Why this project?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#why-this-project)
-* [Why use this?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#why-use-this)
-* [Requirements](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#requirements)
-* [Installation](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#installation)
-* [Usage](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#installation)
-* [Screenshots](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#screenshots)
-* [RoadMap](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#roadmap)
-* [Contributing](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#contributing)
-* [Font License](https://github.com/ndonkoHenri/Login-and-Registration-Portal/edit/master/README.md#font-license)
+* [Introduction](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#introduction) 
+* [Why this project?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#why-this-projectquestion)
+* [Why use this?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#why-use-thisquestion)
+* [Requirements](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#requirements-heavy_check_mark)
+* [Installation](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#installation-memo
+)
+* [Usage](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#usage-memo)
+* [Screenshots](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#screenshots-camera
+)
+* [RoadMap](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#roadmap-dart)
+* [Contributing](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#contributing)
+* [Font License](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#font-license)
 
 
 ## Introduction 
