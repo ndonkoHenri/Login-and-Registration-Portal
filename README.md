@@ -2,17 +2,15 @@
 
 ## Table of Contents
 * [Introduction](#introduction) 
-* [Why this project?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#why-this-projectquestion)
-* [Why use this?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#why-use-thisquestion)
-* [Requirements](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#requirements-heavy_check_mark)
-* [Installation](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#installation-memo
-)
-* [Usage](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#usage-memo)
-* [Screenshots](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#screenshots-camera
-)
-* [RoadMap](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#roadmap-dart)
-* [Contributing](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#contributing)
-* [Font License](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#font-license)
+* [Why this project?](#why-this-projectquestion)
+* [Why use this?](#why-use-thisquestion)
+* [Requirements](#requirements-heavy_check_mark)
+* [Installation](#installation-memo)
+* [Usage](#usage-memo)
+* [Screenshots](#screenshots-camera)
+* [RoadMap](#roadmap-dart)
+* [Contributing](#contributing)
+* [Font License](#font-license)
 
 
 ## Introduction 
