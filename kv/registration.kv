@@ -1,0 +1,173 @@
+# THE REGISTRATION PORTAL
+# All attributes starting with an underscore(_) are private attributes i created for better functionality. Ex: _saved_hint_text
+
+# Q: why _saved_hint_text?
+# A: I implemented a functionality such that when a field is clicked, it's hint_text is deleted to avoid showing it at the top. This attribute keeps the original text, and adds it if there is no text in the field
+
+# Q: why _ref_name?
+# A: keep a reference to our field which will be helpful in the display of alerts; check the python code for implementation
+
+
+<RegistrationScreen>:
+
+    MDBoxLayout:
+        orientation: "vertical"
+        MDFloatLayout:
+            size_hint_y: None
+            height: 80
+            MyLabel:
+                id: lbl_create
+                text: "Sign-up"
+                underline: True
+                halign: "center"
+                font_size: '26sp'
+                pos_hint: {"top": .7}
+
+        MDBoxLayout:
+            id: box
+            orientation: "vertical"
+            pos_hint: {"top": 1}
+
+            MyBoxLayout:
+                top: box.top
+                MyLabel:
+                    id: lbl_name
+                    text: "Name[sup]*[/sup]"
+
+                GeneralTextField:
+                    width: root.width - 40
+                    id: field_name
+                    hint_text: 'your name here'
+                    _saved_hint_text: 'your name here'
+                    _ref_name: lbl_name.text
+
+            MyBoxLayout:
+                MyLabel:
+                    id: lbl_username
+                    text: "Username[sup]*[/sup]"
+
+
+                GeneralTextField:
+                    width: root.width - 40
+                    id: field_username
+                    _saved_hint_text: "your username here"
+                    _ref_name: lbl_username.text
+                    hint_text:  "your username here"
+
+            MyBoxLayout:
+                MyLabel:
+                    id: lbl_email
+                    text: "Email[sup]*[/sup]"
+
+                GeneralTextField:
+                    width: root.width - 40
+                    id: field_email
+                    _saved_hint_text: 'your email here'
+                    _ref_name: lbl_email.text
+                    hint_text: 'your email here'
+
+
+            MyBoxLayout:
+                MyLabel:
+                    id: lbl_pass
+                    text: "Password[sup]*[/sup]"
+
+                MDRelativeLayout:
+                    size_hint_y: None
+                    height: field_pass.height
+                    width: root.width - 40
+
+                    PasswordTextField:
+                        id: field_pass
+                        hint_text: 'enter a strong one'
+                        _saved_hint_text: 'enter a strong one'
+                        _ref_name: lbl_pass.text
+
+                    MDIconButton:
+                        # the button to click inorder to show the password
+                        icon: "eye-off"
+                        pos_hint: {"center_y": .5}
+                        pos: field_pass.width - self.width + dp(5), 0
+                        theme_text_color: "Hint"
+                        on_release:
+                            self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                            field_pass.password = False if field_pass.password is True else True
+
+            MyBoxLayout:
+                MyLabel:
+                    id: lbl_cfmpass
+                    text: "Confirm Password[sup]*[/sup]"
+
+                MDRelativeLayout:
+                    size_hint_y: None
+                    height: field_cfmpass.height
+                    width: root.width - 40
+
+                    PasswordTextField:
+                        id: field_cfmpass
+                        _saved_hint_text: 'enter it once more'
+                        _ref_name: lbl_cfmpass.text
+                        hint_text: 'enter it once more'
+
+                    MDIconButton:
+                        # the button to click inorder to show the password
+                        icon: "eye-off"
+                        pos_hint: {"center_y": .5}
+                        pos: field_cfmpass.width - self.width + dp(5), 0
+                        theme_text_color: "Hint"
+                        on_release:
+                            self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                            field_cfmpass.password = False if field_cfmpass.password is True else True
+
+            Widget:
+                # creates empty space
+                height: dp(1)
+                size_hint_y: None
+
+            MDBoxLayout:
+                height: checkbox.height
+                size_hint_y: None
+                MDCheckbox:
+                    size_hint: None, None
+                    id: checkbox
+                    md_bg_color: 1,0,0,.5
+                    size: dp(48), dp(48)
+
+                MDLabel:
+                    text: "I accept the [i][color=#00f]Terms of Use & Privacy Policy[/color][/i]"
+                    font_style: "Body2"
+                    halign: "left"
+                    markup: True
+            MDRectangleFlatIconButton:
+                text: "     Create My Account     "
+                icon: 'account-check'
+                font_name: "JetBrainsMono"
+                bold: True
+                md_bg_color: "blue"
+                theme_text_color: 'Custom'
+                font_style: "Button"
+                text_color: "white"
+                theme_icon_color: 'Custom'
+                icon_color: 1,1,1,1
+                pos_hint: {"center_x": .5}
+                # when the button is released, we send the user's entries to our function in the python section, to check if the account already exists and login
+                on_release: root.create_account(field_name, field_username, field_email, field_pass, field_cfmpass)
+
+            Widget:
+                # creates empty space
+                height: dp(10)
+                size_hint_y: None
+
+
+            MDTextButton:
+                text: "Already have an account? [u]Sign in[/u]"
+                markup: True
+                font_name: "JetBrainsMono"
+                font_style: "Caption"
+                adaptive_height: True
+#                padding: 0,5,0,0
+                pos_hint: {"center_x": .5}
+                on_release: root.manager.current = "login"
+
+            Widget:
+                # creates empty space

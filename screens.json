@@ -1,0 +1,12 @@
+{
+    "registration": {
+        "import": "from py.registration import RegistrationScreen",
+        "kv": "kv/registration.kv",
+        "object": "RegistrationScreen()"
+    },
+    "login": {
+        "import": "from py.login import LoginScreen",
+        "kv": "kv/login.kv",
+        "object": "LoginScreen()"
+    }
+}

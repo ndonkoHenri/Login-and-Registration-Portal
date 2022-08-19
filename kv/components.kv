@@ -1,0 +1,60 @@
+# a list of reusable components being used in other *.kv files: login.kv, registration.kv
+# this file is loaded before all the other *.kv files, else there will be errors, since the other files make use of these components
+# look at how this is being implemented in py/root.py
+
+
+<MyLabel@MDLabel>
+    # a component for the labels
+
+    adaptive_height: True
+    # make the label's text bold
+    bold: True
+    pos_hint: {"left": .42}
+    markup: True
+    font_name: "JetBrainsMono"
+
+<GeneralTextField@MDTextField>
+    # the main component for all the fields
+
+    # other modes are: "round", "rectangle"
+    mode: 'fill'
+    # a dummy placeholder text which would show up in case i don't add a hint_text property to a field specifically
+    hint_text: 'PlaceHolder'
+    # set the colors. Feel free to change any of these to your likings or according to your project
+    theme_text_color: 'Custom'
+    hint_text_color_focus: 1,1,1,0
+    hint_text_color_normal: 0.5,0.5,0.5,1
+    text_color_normal: "indigo"
+    text_color_focus: "indigo"
+    # radius: 12, 12, 12, 12  # when using mode: "round"
+    fill_color_normal: 0.9,.92,0.8,0.8
+    # a little padding for style
+    padding: "10dp"
+    pos_hint: {"center_x": .52}
+    # the bubble helps smartphone users to easily copy, paste, or cut text found in the field
+    use_bubble: True
+    # the handles are mainly used by smartphone users to easily select text. I made it available to PC users also, by setting use_handle to True
+    use_handles: True
+    # when set to true, pressing tab adds 4 spaces
+    write_tab: False
+    # we set the maximum length of all the fields to 20.
+    max_text_length: 20
+    # a jetbrains font that i added and registered in the LabelBase. Feel free to check/modify the files i added 'assets/fonts/JetBrainsMono'
+    font_name: "JetBrainsMono"
+    # if there is text in the field, or the user types some text, we delete the hint_text attribute, and add it if when there is no text
+    on_focus: self.hint_text = self._saved_hint_text if self.text.strip() == '' else ''
+
+<PasswordTextField@GeneralTextField>
+    # a component for the password fields
+    icon_left: 'key'
+    password: True
+    text_color_normal: "brown"
+    font_name: "JetBrainsMono"
+    text_color_focus: "brown"
+
+<MyBoxLayout@MDBoxLayout>
+    # a box layout component
+    orientation: "vertical"
+    adaptive_height: True
+    padding: 15,8
+

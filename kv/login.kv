@@ -1,0 +1,103 @@
+# THE LOGIN PORTAL
+# All attributes starting with an underscore(_) are private attributes i created for better functionality. Ex: _saved_hint_text
+
+# Q: why _saved_hint_text?
+# A: I implemented a functionality such that when a field is clicked, it's hint_text is deleted to avoid showing it at the top. This attribute keeps the original text, and adds it if there is no text in the field
+
+# Q: why _ref_name?
+# A: keep a reference to our field which will be helpful in the display of alerts; check the python code for implementation
+
+<LoginScreen>:
+
+    MDBoxLayout:
+        orientation: "vertical"
+        MDFloatLayout:
+            size_hint_y: None
+            height: 80
+            MyLabel:
+                id: lbl_create
+                text: "Sign-in"
+                halign: "center"
+                font_size: '28sp'
+                pos_hint: {"top": .7}
+
+        MDBoxLayout:
+            id: box
+            orientation: "vertical"
+            pos_hint: {"top": 1}
+
+            MyBoxLayout:
+                MyLabel:
+                    id: lbl_username
+                    text: "Username/Email[sup]*[/sup]"
+
+
+                GeneralTextField:
+                    width: root.width - 40
+                    id: field_username_or_email
+                    _saved_hint_text: "your username or email here"
+                    _ref_name: lbl_username.text
+                    hint_text:  "your username or email here"
+
+            MyBoxLayout:
+                MyLabel:
+                    id: lbl_pass
+                    text: "Password[sup]*[/sup]"
+
+                MDRelativeLayout:
+                    size_hint_y: None
+                    height: field_pass.height
+                    width: root.width - 40
+
+                    PasswordTextField:
+                        id: field_pass
+                        hint_text: "hope it's a strong one"
+                        _saved_hint_text: "hope it's a strong one"
+                        _ref_name: lbl_pass.text
+
+                    MDIconButton:
+                        # the button to click inorder to show the password
+                        icon: "eye-off"
+                        pos_hint: {"center_y": .5}
+                        pos: field_pass.width - self.width + dp(5), 0
+                        theme_text_color: "Hint"
+                        on_release:
+                            self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                            field_pass.password = False if field_pass.password is True else True
+
+            Widget:
+                # creates empty space
+                height: dp(10)
+                size_hint_y: None
+
+            MDRectangleFlatIconButton:
+                # the login button
+                text: "     Login     "
+                icon: 'account-check'
+                md_bg_color: "blue"
+                theme_text_color: 'Custom'
+                font_style: "Button"
+                text_color: "white"
+                theme_icon_color: 'Custom'
+                icon_color: 1,1,1,1
+                pos_hint: {"center_x": .5}
+                # when the button is released, we send the user's entries to our function in the python section, to check if the account already exists and login
+                on_release: root.account_login(field_username_or_email,field_pass)
+
+            Widget:
+                # creates empty space
+                height: dp(10)
+                size_hint_y: None
+
+            MDTextButton:
+                text: "[u]Forgot your password?[/u]"
+                markup: True
+                font_name: "JetBrainsMono"
+                font_style: "Caption"
+                adaptive_height: True
+#                padding: 0,5,0,0
+                pos_hint: {"center_x": .5}
+#                on_release: root.manager.current = "login"
+
+            Widget:
+                # creates empty space
