@@ -79,6 +79,7 @@ How far have we gone:
 - [ ] Create a logo
 - [ ] Splash screen
 - [ ] Onboarding Screen
+- [ ] Compile for Android
 
 ## Contributing
 Please open an issue if you have any problem. It will be responded as fast as possible.
