@@ -1,4 +1,11 @@
 # Login and Registration Portal
+![Python](https://img.shields.io/badge/python-3.8%2B-orange)
+![Kivy](https://img.shields.io/badge/kivy-2.1.0-green)
+![KivyMD](https://img.shields.io/badge/kivymd-1.0.2-yellowgreen)
+
+![GitHub top language](https://img.shields.io/github/languages/top/ndonkoHenri/Login-and-Registration-Portal)
+![GitHub language count](https://img.shields.io/github/languages/count/ndonkoHenri/Login-and-Registration-Portal)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/ndonkoHenri/Login-and-Registration-Portal?color=ry)
 
 ## Table of Contents
 * [Introduction](#introduction) 
