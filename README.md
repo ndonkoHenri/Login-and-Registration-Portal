@@ -1,7 +1,7 @@
 # Login and Registration Portal
 
 ## Table of Contents
-* [Introduction](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#introduction) 
+* [Introduction](#introduction) 
 * [Why this project?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#why-this-projectquestion)
 * [Why use this?](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#why-use-thisquestion)
 * [Requirements](https://github.com/ndonkoHenri/Login-and-Registration-Portal/blob/master/README.md#requirements-heavy_check_mark)
