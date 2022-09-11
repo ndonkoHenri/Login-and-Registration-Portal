@@ -1,8 +1,13 @@
 import json
+
+from kivy import platform
 from kivy.clock import Clock
 from kivy.lang import Builder
+from kivymd.toast import toast
+from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.core.window import Window
+
 
 # minimum height for the desktop window
 Window.minimum_width = 372
@@ -17,7 +22,7 @@ class TheManager(MDScreenManager):
     """
 
     def __init__(self, **kwargs):
-        Builder.load_file('kv/root.kv') # contains the Root Widget, hence loaded before init of our screen manager
+        # Builder.load_file('kv/root.kv') # contains the Root Widget, hence loaded before init of our screen manager
 
         super().__init__(**kwargs)
         Builder.load_file('kv/components.kv')
@@ -58,3 +63,40 @@ class TheManager(MDScreenManager):
             self.add_widget(
                 screen_object
             )  # finally, adding it to the screen manager
+
+
+class SocialMediaButtons(MDBoxLayout):
+    """
+    All the social media buttons available for (rapid) login.../Facebook, google, facebook, github/
+    """
+
+    def social_icon_pressed(self, instance):
+        """
+        Gives an area for authentication, when any social media icon is pressed.
+        The KivyAuth library is to be used here.
+        It will only work on mobile...because the pc version is not yet available
+        """
+        # todo: add the authentication stuffs for all of these social medias
+        media = instance.icon
+
+
+        if platform == "android":
+            # we make sure the platform calling it is android
+
+
+
+            if media == 'google':
+                pass
+            elif media == 'facebook':
+                pass
+            elif media == 'github':
+                pass
+            elif media == 'twitter':
+                pass
+            else:
+                print(f"Social Media not recognised! <unknown {media}>!")
+
+        else:
+            # toast(f"Not yet available for {platform}! :(")
+            pass
+        return media
