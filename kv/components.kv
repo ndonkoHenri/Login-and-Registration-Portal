@@ -1,3 +1,5 @@
+#: import toast kivymd.toast
+
 # a list of reusable components being used in other *.kv files: login.kv, registration.kv
 # this file is loaded before all the other *.kv files, else there will be errors, since the other files make use of these components
 # look at how this is being implemented in py/root.py
@@ -19,7 +21,7 @@
     # other modes are: "round", "rectangle"
     mode: 'fill'
     # a dummy placeholder text which would show up in case i don't add a hint_text property to a field specifically
-    hint_text: 'PlaceHolder'
+    hint_text: 'PlaceHolder Text'
     # set the colors. Feel free to change any of these to your likings or according to your project
     theme_text_color: 'Custom'
     hint_text_color_focus: 1,1,1,0
@@ -29,7 +31,7 @@
     # radius: 12, 12, 12, 12  # when using mode: "round"
     fill_color_normal: 0.9,.92,0.8,0.8
     # a little padding for style
-    padding: "10dp"
+    padding: dp(10), dp(10), dp(16), dp(10)
     pos_hint: {"center_x": .52}
     # the bubble helps smartphone users to easily copy, paste, or cut text found in the field
     use_bubble: True
@@ -56,5 +58,39 @@
     # a box layout component
     orientation: "vertical"
     adaptive_height: True
-    padding: 15,8
+    padding: dp(15),dp(8)
+
+<SocialMediaIcon@MDIconButton>:
+    # icon for the social media accounts
+    on_release: print(root.parent.social_icon_pressed(root))
+
+
+<SocialMediaButtons>:
+    # a boxlayout for all the social media buttons
+    orientation: "horizontal"
+    spacing:
+    padding: 0,dp(5),0,0
+    pos_hint: {"center_x": .5}
+    adaptive_height: True
+    adaptive_width: True
+
+    SocialMediaIcon:
+        icon: 'google'
+
+    SocialMediaIcon:
+        icon: 'facebook'
+
+    SocialMediaIcon:
+        icon: 'github'
+
+    SocialMediaIcon:
+        icon: 'twitter'
+
+##
+#"login": {
+#        "import": "from py.login import LoginScreen",
+#        "kv": "kv/login.kv",
+#        "object": "LoginScreen()"
+#    }
+
 
