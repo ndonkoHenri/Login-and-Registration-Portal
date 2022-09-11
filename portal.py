@@ -37,6 +37,13 @@ class IdentificationPortal(MDApp):  # NOQA: N801
                            fn_bolditalic=os.path.join("assets", "fonts", "JetBrainsMono",
                                                       "JetBrainsMono-Bold-Italic.ttf")
                            )
+        # todo: Uncomment the lines below
+        # from kivyauth import twitter_auth, facebook_auth, google_auth, github_auth
+        #
+        # twitter_auth.initialize_twitter()
+        # facebook_auth.initialize_fb()
+        # google_auth.initialize_google()
+        # github_auth.initialize_github()
         return TheManager()
 
     def register_new_font(self, font_name, location):
